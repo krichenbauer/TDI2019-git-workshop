@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/inconsolata" type="text/css"/>
+    <meta name="viewport" content="width=1920" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>TDI2019 Git</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body><div id="impress">
+
+<div class="step" data-x="0" data-y="-2000" data-scale="1.0">
+  <div style="padding:2em">
+    <h1>Git:</h1>
+    <h2>Distributed Version Control</h2>
+    <p>Use arrow keys to navigate slides</p>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">
+      <img src="cc_icon_white_x2.png" alt="CC"/>
+      <img src="attribution_icon_white_x2.png" alt="BY"/>
+      <img src="nc_white_x2.png" alt="NC"/>
+      <img src="sa_white_x2.png" alt="SA"/>
+    </a>
+    <p>
+      <small>Slides made with <a href="https://github.com/impress/impress.js">impress.js</a> (MIT License)</small>
+    </p>
+  </div>
+</div>
+
+
+<div class="step" data-x="0" data-y="-1000" data-scale="1.2">
+  <h1>Warum VCS?</h1>
+  <img src="img/whygit.png"/>
+</div>
+
+<div class="step" data-x="0" data-y="0" data-scale="1">
+  <h1>Vorwissen?</h1>
+</div>
+
+<div class="step" data-x="0" data-y="1000" data-scale="1">
+  <h1>Inhalt</h1>
+  <ul>
+    <li>Git-Grundlagen</li>
+    <li>Die wichtigsten git-Befehle</li>
+    <li>Übungen dazu</li>
+    <li><i>branches und merges</i></li>
+    <li>Das Git-Ökosystem</li>
+    <li>Git in der Schule</li>
+  </ul>
+</div>
+
+<div class="step" data-x="2000" data-y="0" data-scale="1">
+  <h1>Git-Grundlagen</h1>
+  <img src="img/svngit.svg.png"/>
+</div>
+
+<div class="step" data-x="4000" data-y="0" data-scale="1">
+  <h1>Git-Befehle</h1>
+  <p style="font-family:monospace;"> git <i>verb parameter</i></p>
+  <hr/>
+  <h2>z.B.:aktuellen Zustand anzeigen</h2>
+  <p style="font-family:monospace;">git status</p>
+</div>
+
+<div class="step" data-x="4000" data-y="1000" data-scale="1">
+  <h2>Neues Git-Repository</h2>
+  <p style="font-family:monospace;">git init</p>
+  <hr/>
+  <h2>Git-Repository <i>herunterladen</i></h2>
+  <p style="font-family:monospace;">git clone <i>externes_Repo</i></p>
+</div>
+
+<div class="step" data-x="4000" data-y="2000" data-scale="1">
+  <h2>Änderungen in Index übernehmen</h2>
+  <p style="font-family:monospace;">git add <i>Dateinamen</i></p>
+  <hr/>
+  <h2>Änderungen aus dem Index in das Repository übernehmen </h2>
+  <p style="font-family:monospace;">git commit</p>
+</div>
+
+<div class="step" data-x="4000" data-y="3000" data-scale="1">
+  <h2>Änderungen in externes Repository übertragen</h2>
+  <p style="font-family:monospace;">git push</p>
+  <hr/>
+  <h2>Änderungen aus dem externen Repository holen</h2>
+  <p style="font-family:monospace;">git pull</p>
+</div>
+
+<div class="step" data-x="4000" data-y="4000" data-scale="0.9">
+  <h1>Git-Grundlagen</h1>
+  <img style="width:80%;" src="img/svngit.svg.png"/><br/>
+  <a href="https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf">Cheat Sheet</a>
+</div>
+
+<div class="step" data-x="6000" data-y="-1000" data-scale="1">
+  <h2>Vorbereitung:</h2>
+  <h2>Git configurieren</h2>
+  <p style="font-family:monospace;font-size:0.6em;">
+    git config --global user.name "Anna Mustermann" <br/>
+    git config --global user.email "muster@firma.de" <br/>
+    git config --global color.ui auto <br/>
+    git config --global core.editor "nano" <br/>
+  </p>
+  
+  
+</div>
+
+<div class="step" data-x="6000" data-y="0" data-scale="1">
+  <h2>Übung 1:</h2>
+  <h2>Neues Git-Repo erstellen:</h2>
+  <p style="font-family:monospace; font-size:0.8em">
+    cd ~/Desktop/ <br/>
+    mkdir erstesrepo <br/>
+    cd erstesrepo <br/>
+    git init <br/>
+    git status <br/>
+    nano einedatei.txt<br/>
+    git add einedatei.txt<br/>
+    git commit<br/>
+    git status<br/>
+  </p>
+</div>
+
+<div class="step" data-x="6000" data-y="1000" data-scale="1">
+  <h2>Übung 2:</h2>
+  <h2>Git-Repo bearbeiten:</h2>
+    <p style="font-family:monospace; font-size:0.8em">
+    <i>dateien wie gewohnt editieren</i><br/>
+    git add <i>dateien, alternativ auch *</i><br/>
+    git commit<br/>
+  </p>
+</div>
+<div class="step" data-x="6000" data-y="2000" data-scale="1">
+  <h2>Das "Log", der Blick in die Vergangenheit</h2>
+    <p>Einige von vielen Möglichkeiten:</p>
+    <p style="font-family:monospace; font-size:0.8em">
+    git log<br/>
+    gitg<br/>
+    gitk<br/>
+    tig<br/>
+    </p>
+</div>
+
+<div class="step" data-x="8000" data-y="0000" data-scale="1">
+  <h2>Übung 3:</h2>
+  <h2>Git-Repo kopieren:</h2>
+  <p style="font-family:monospace; font-size:0.8em">
+    cd ~/Desktop/ <br/>
+    git&nbsp;clone&nbsp;https://pisa.tcs.ifi.lmu.de/gitea/tdi/gg.git<br/>
+  </p>
+  <p style="color:red;">Login: tdi Passwort:tdi2019</p>
+    <p style="font-family:monospace; font-size:0.8em">
+    cd gg<br/>
+    git status<br/>
+    ls   
+  </p>
+</div>
+
+<div class="step" data-x="8000" data-y="1000" data-scale="1">
+  <h2>Übung 4:</h2>
+  <h2>Pull / Fetch</h2>
+  <p style="font-family:monospace; font-size:0.8em">
+    git pull<br/>
+  </p>
+  <hr/>
+  <p style="font-family:monospace; font-size:0.8em">
+    git fetch <br/>
+    git merge origin/master<br/>
+  </p>
+</div>
+
+<div class="step" data-x="8000" data-y="2000" data-scale="1">
+  <h2>Übung 4:</h2>
+  <h2>Merge</h2>
+  <p>Oft geht der Merge automatisch. Handarbeit ist nur dann nötig, wenn Konflikte auftreten - z.B. bei Änderungen in der gleichen Zeile</p>
+  <p style="font-family:monospace; font-size:0.8em">
+    git mergetool<br/>
+  </p>
+</div>
+
+<div class="step" data-x="10000" data-y="0" data-scale="1">
+  <h2>Wie oft commiten?</h2>
+</div>
+
+<div class="step" data-x="10000" data-y="1000" data-scale="1">
+  <h2>Der Blick in die Vergangenheit</h2>
+  <p style="font-family:monospace; font-size:0.8em">
+    git checkout <i>commit</i><br/>
+  </p>
+  <hr/>
+  <p style="font-family:monospace; font-size:0.8em">
+    git diff <i>commit</i><br/>
+  </p>
+</div>
+
+
+<div class="step" data-x="10000" data-y="2000" data-scale="1">
+  <h2>Branches</h2>
+  <p style="font-family:monospace; font-size:0.8em">
+    git checkout -b <i>neuer-branch-name</i><br/>
+  </p>
+</div>
+
+
+<div class="step" data-x="12000" data-y="0" data-scale="1">
+  <h2>Das Git-Ökosystem</h2>
+  <ul>
+    <li> <a href="https://github.com">Github</a></li>
+    <li> <a href="https://gitlab.com">Gitlab</a></li>
+  </ul>
+</div>
+
+<div class="step" data-x="12000" data-y="1000" data-scale="1">
+  <h2>Selbstgehosted</h2>
+  <ul>
+    <li>Gitea</li>
+    <li> <a href="https://gitlab.com">Gitlab</a></li>
+  </ul>
+</div>
+
+<div class="step" data-x="12000" data-y="2000" data-scale="1">
+  <h2>Pull-Requests</h2>
+  <p>Statt in fremde Repositories zu pushen, gibt man dem Eigentümer eine einfache Möglichkeit meine Änderungen zu übernehmen</p>
+</div>
+
+<div class="step" data-x="14000" data-y="0000" data-scale="1">
+  <h2>Git in der Schule</h2>
+  <ul>
+    <li>Gitea</li>
+    <li>Tortoise Git</li>
+    <li>BlueJ</li>
+  </ul>
+</div>
+
+<div class="step" data-x="-2300" data-y="200" data-scale=".25">
+  <h2>Danke für die Aufmerksamkeit </h2>
+   <p>christoph.krichenbauer@ifi.lmu.de</p>
+  </h2>
+</div>
+
+</div></body>
+
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+</html>
